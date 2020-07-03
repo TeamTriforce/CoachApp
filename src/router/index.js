@@ -21,7 +21,12 @@ Vue.use(VueRouter)
     path: 'SignIn',
     name: 'SignIn',
     component: SignIn
-  }
+  },
+  {
+    path: 'MentionsLegales',
+    name: 'MentionsLegales',
+    component: MentionsLegales
+  },
 ]
 
 const router = new VueRouter({
