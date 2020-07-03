@@ -13,7 +13,20 @@
       "coach": true
     }
   ],
-  
+  "mealQuantity": [
+    {
+        "id": 1,
+        "name": "Légé"
+    },
+    {
+        "id": 2,
+        "name": "Normalement"
+    },
+    {
+        "id": 3,
+        "name": "Beaucoup"
+    }
+  ],
   "dailyReport": [
     {
       "id": 1,
@@ -21,9 +34,9 @@
       "sport": "Escalade",
       "intensityId": 4,
       "duration": 1.5,
-      "breakfast": "aucun",
-      "lunch": "aucun",
-      "dinner": "bar protéinée",
+      "breakfastId": 1,
+      "lunchId": 1,
+      "dinnerId": 1,
       "snack": false,
       "weight": 60,
       "moodId": 1,
