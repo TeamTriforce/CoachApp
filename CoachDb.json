@@ -11,36 +11,9 @@
       "login": "fsjjgj",
       "password": 123,
       "coach": true
-    },
-    {
-      "params": {
-        "login": "jo",
-        "password": "1"
-      },
-      "id": 3
-    },
-    {
-      "params": {
-        "login": "a",
-        "password": "1"
-      },
-      "id": 4
-    },
-    {
-      "params": {
-        "login": "a",
-        "password": "`"
-      },
-      "id": 5
-    },
-    {
-      "params": {
-        "login": "a",
-        "password": "a"
-      },
-      "id": 6
     }
   ],
+  
   "dailyReport": [
     {
       "id": 1,

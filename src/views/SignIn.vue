@@ -30,10 +30,9 @@ export default {
                 const connection = await this.axios.post(   
                 "http://localhost:3000/user",
                 {
-                    params: {
-                        login: this.login,
-                        password: this.password
-                    }
+                    login: this.login,
+                    password: this.password,
+                    coach: false
                 }
                 );
 
