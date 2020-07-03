@@ -1,6 +1,6 @@
 <template>
 <!-- Page concernant le membre -->
-    <div>
+    <div class="mt-16">
         <DailyReportForm/>
     </div>
 </template>

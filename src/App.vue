@@ -15,13 +15,13 @@
           width="40"
         />
         <v-btn
-          href=""
           target="_blank"
           text
+          @click="homeClick"
         >
           <span class="mr-2">Accueil</span>
         </v-btn>
-        <v-btn target="_blank" @click="MemberClick">
+        <v-btn text target="_blank" @click="MemberClick">
           <span class="mr-2">Membres</span>
         </v-btn>
 
@@ -30,7 +30,7 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn target="_blank" @click="CoachClick">
+      <v-btn text target="_blank" @click="CoachClick">
         <span class="mr-2">Espace Coach</span>
       </v-btn>
     </v-app-bar>
@@ -178,6 +178,11 @@ export default {
   },
 
   methods: {
+    homeClick(){
+      this.home = false;
+
+      this.$router.push({name: "App"});
+    },
     mentionsLegalesClick(){
       this.home = false;
 
