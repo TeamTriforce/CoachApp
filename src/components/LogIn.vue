@@ -1,10 +1,12 @@
 <template>
-    <v-form>
-        <v-text-field v-model="login" label="Identifiant" required/>
-        <v-text-field v-model="password" label="Mot de passe" required type="password"/>
-        <v-btn color="success" @click="connect">Connection</v-btn>
-        <v-alert v-if="error" type="error">{{ error }}</v-alert>
-    </v-form>
+    <div style="padding: 50px 100px;">
+        <v-form>
+            <v-text-field v-model="login" label="Identifiant" required/>
+            <v-text-field v-model="password" label="Mot de passe" required type="password"/>
+            <v-btn class="white--text mt-4" color="#ff7777" @click="connect">Connection</v-btn>
+            <v-alert v-if="error" type="error">{{ error }}</v-alert>
+        </v-form>
+    </div>
 </template>
 
 <script>
@@ -46,8 +48,8 @@ export default {
             }
         }
     }
-} 
+}
 </script>
 
-<style lang="scss" scoped> 
+<style lang="scss" scoped>
 </style>
