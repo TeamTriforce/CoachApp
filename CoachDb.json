@@ -1,23 +1,23 @@
 {
-    "client": [
+    "user": [
         {
             "id": 1,
             "login": "clemzer3000",
-            "password": 123
-        }
-    ],
-
-    "coach": [
+            "password": 123,
+            "coach": false
+        },
         {
-            "id": 1,
+            "id": 2,
             "login": "fsjjgj",
-            "password": 123
+            "password": 123,
+            "coach": true
         }
     ],
 
     "dailyReport": [
         {
             "id": 1,
+            "userId": 1,
             "sport": "Escalade",
             "intensityId": 4,
             "duration": 1.5,
@@ -72,8 +72,8 @@
     "coachMessage": [
         {
             "id": 1,
-            "coachId": 1,
-            "clientId": 1,
+            "userCoachId": 2,
+            "userClientId": 1,
             "message": "Félicitation clemzer3000 !"
         }
     ],
