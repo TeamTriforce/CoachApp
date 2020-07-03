@@ -15,7 +15,7 @@
 
 <script>
 import MemberSpace from "@/components/MemberSpace.vue";
-import CoachDb from "@/CoachDb";
+import CoachDb from "../../CoachDb";
 
     export default {
         components: { MemberSpace },
