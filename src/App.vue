@@ -109,7 +109,7 @@
                 justify="center"
               >
                 <v-row justify="center">
-                  <v-dialog v-model="dialog" fullscreen hide-overlay transition="dialog-bottom-transition">
+                  <v-dialog v-model="dialog_create" fullscreen hide-overlay transition="dialog-bottom-transition">
                     <template v-slot:activator="{ on, attrs }">
                       <v-btn class="ma-2" outlined color="white" v-bind="attrs" v-on="on">
                         Créer un compte
@@ -117,7 +117,7 @@
                     </template>
                     <v-card>
                       <v-toolbar dark color="#ff7777">
-                        <v-btn icon dark @click="dialog = false">
+                        <v-btn icon dark @click="dialog_create = false">
                           <v-icon>mdi-close</v-icon>
                         </v-btn>
                         <v-toolbar-title>Créer un compte</v-toolbar-title>
@@ -127,7 +127,7 @@
                   </v-dialog>
                 </v-row>
                 <v-row justify="center">
-                  <v-dialog v-model="dialog" fullscreen hide-overlay transition="dialog-bottom-transition">
+                  <v-dialog v-model="dialog_connect" fullscreen hide-overlay transition="dialog-bottom-transition">
                     <template v-slot:activator="{ on, attrs }">
                       <v-btn class="ma-2" outlined color="white" v-bind="attrs" v-on="on">
                         Se connecter
@@ -135,7 +135,7 @@
                     </template>
                     <v-card>
                       <v-toolbar dark color="#ff7777">
-                        <v-btn icon dark @click="dialog = false">
+                        <v-btn icon dark @click="dialog_connect = false">
                           <v-icon>mdi-close</v-icon>
                         </v-btn>
                         <v-toolbar-title>Se connecter</v-toolbar-title>
@@ -177,7 +177,8 @@ export default {
   data() {
     return {
       home: true,
-      dialog: false,
+      dialog_create: false,
+      dialog_connect: false,
       notifications: false,
       sound: true,
       widgets: false,
