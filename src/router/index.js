@@ -3,8 +3,9 @@ import VueRouter from 'vue-router'
 import App from '@/App.vue'
 import SignIn from '@/components/SignIn.vue'
 import LogIn from '@/components/LogIn.vue'
-import store from '@/store/index';
+import store from '@/store/index'
 import Member from '@/views/Member.vue'
+import MentionsLegales from '@/views/MentionsLegales.vue'
 import CoachSpace from '@/views/CoachSpace.vue'
 
 
@@ -36,6 +37,11 @@ Vue.use(VueRouter)
     name: 'Coach',
     component: CoachSpace
   },
+  {
+    path: 'MentionsLegales',
+    name: 'MentionsLegales',
+    component: MentionsLegales
+  },
 ]
 
 const router = new VueRouter({
@@ -57,4 +63,3 @@ router.beforeEach((to, from, next) => {
 });
 
 export default router
- 
