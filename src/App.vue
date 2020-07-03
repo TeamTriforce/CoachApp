@@ -31,9 +31,7 @@
 
 
       </div>
-
-
-
+      
       <v-spacer></v-spacer>
 
       <v-btn
@@ -46,6 +44,12 @@
     </v-app-bar>
 
     <v-content>
+      <v-container>
+        <router-view></router-view>
+      </v-container>
+    </v-content>
+    
+    <v-content v-if="home">
       <v-parallax
         dark
         src="@/assets/background.png"
@@ -104,8 +108,8 @@
                 align="center"
                 justify="center"
               >
-                <v-btn class="ma-2" outlined color="white">Créer un compte</v-btn>
-                <v-btn class="ma-2" outlined color="white">Je me connecte</v-btn>
+                <v-btn class="ma-2" outlined color="white" @click="signInClick">Créer un compte</v-btn>
+                <v-btn class="ma-2" outlined color="white" @click="logInClick">Je me connecte</v-btn>
               </v-row>
             </v-col>
             </v-row>
@@ -123,16 +127,22 @@ export default {
   components: {
   },
 
-  data: () => ({
-    //
-  }),
+  data() {
+    return {
+      home: true
+    }
+  },
 
   methods: {
     signInClick() {
+      this.home = false;
 
+      this.$router.push({name: "SignIn"});
     },
-    loginClick() {
-      
+    logInClick() {
+      this.home = false;
+
+      this.$router.push({name: "LogIn"});
     }
   }
 };

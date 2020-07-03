@@ -7,7 +7,6 @@ import store from './store'
 import router from './router'
 
 Vue.use(VueAxios, axios)
-Vue.use(VueRouter)
 
 Vue.config.productionTip = false
 
