@@ -36,10 +36,9 @@ export default {
                     // TODO : Uncomment and add Coach route below.
                     //this.$router.push({ name: "Coach" });
                 } else {
-                    // TODO : Remove this when views ok, here for test purpose.
-                    //this.$router.push({ name: "Client" });
-                    this.error = "Connection client";
+                    this.$router.push({ name: "Member" });
                 }
+
                 this.$store.dispatch("updateUser", { name: this.login });
             } else {
                 this.error = "Le couple identifiant / mot de passe est invalide.";

@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from '@/App.vue'
-import SignIn from '@/components/SignIn.vue'
-import LogIn from '@/components/LogIn.vue'
+import Home from '@/views/Member.vue'
 import store from '@/store/index';
 
 Vue.use(VueRouter)
@@ -14,14 +13,9 @@ Vue.use(VueRouter)
     component: App
   },
   {
-    path: 'LogIn',
-    name: 'LogIn',
-    component: LogIn
-  },
-  {
-    path: 'SignIn',
-    name: 'SignIn',
-    component: SignIn
+    path: '/Member',
+    name: 'Member',
+    component: Home
   }
 ]
 
@@ -32,7 +26,8 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-	const userInStore = store.state.users.user;
+  console.log(store.state)
+	const userInStore = store.state.user.user;
 	const isAuthenticated = userInStore !== null ? true : false;
 	const isProtected = to.matched.some((route) => route.meta.needAuth);
 

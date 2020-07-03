@@ -7,13 +7,13 @@
     <v-form>
         <v-text-field v-model="sport" label="Sport pratiqué" required/>
         <v-text-field v-model="duration" type="number" step="0.1" label="Durée" required/>
-        <v-select v-model="intensity" :items="intensities" label="Intensité" required/>
-        <v-select v-model="breakfastId" :items="mealQuantities" label="Repas petit déjeuner" required/>
-        <v-select v-model="lunchId" :items="mealQuantities" label="Repas déjeuner" required/>
-        <v-select v-model="dinerId" :items="mealQuantities" label="Intensité diner" required/>
-        <v-checkbox v-model="snack" label="Collation" required>
+        <v-select v-model="intensity" :items="intensities" label="Intensité" item-text="name" item-value="id" required/>
+        <v-select v-model="breakfastId" :items="mealQuantities" label="Repas petit déjeuner" item-text="name" item-value="id" required/>
+        <v-select v-model="lunchId" :items="mealQuantities" label="Repas déjeuner" item-text="name" item-value="id" required/>
+        <v-select v-model="dinerId" :items="mealQuantities" label="Intensité diner" item-text="name" item-value="id" required/>
+        <v-checkbox v-model="snack" label="Collation" required/>
         <v-text-field v-model="weight" type="number" step="0.5" label="Poid" required/>
-        <v-select v-model="moodId" :items="moods" label="Humeur" required/>
+        <v-select v-model="moodId" :items="moods" label="Humeur" item-text="name" item-value="id" required/>
         <v-text-field v-model="info" label="Informations"/>
 
         <v-btn color="success" @click="save">Enregistrer</v-btn>
@@ -23,6 +23,8 @@
 </template>
 
 <script>
+import Loading from "@/components/Loading.vue"
+
 export default {
     data() {
         return {
@@ -31,14 +33,14 @@ export default {
             moods: [],
             sport: "",
             duration: 0.0,
-            intensity: "",
+            intensity: 0,
             breakfastId: 0,
             lunchId: 0,
-            dinnerId: 0,
+            dinerId: 0,
             snack: false,
-            weight: 60,
-            moodId: 1,
-            info: "RAS",
+            weight: 0,
+            moodId: 0,
+            info: "",
             loading:false,
             error: ""
         };
@@ -59,8 +61,10 @@ export default {
     },
     methods: {
         async save() {
-            const userInStore = this.$store.state.users.user;
+            const userInStore = this.$store.state.user.user;
             const userId = userInStore.id;
+
+            console.log(this.intensity);
 
             const connection = await this.axios.post(   
             "http://localhost:3000/dailyReport",
@@ -71,7 +75,7 @@ export default {
                 intensity: this.intensity,
                 breakfastId: this.breakfastId,
                 lunchId: this.lunchId,
-                dinnerId: this.dinnerId,
+                dinerId: this.dinnerId,
                 snack: this.snack,
                 weight: this.weight,
                 moodId: this.moodId,
@@ -83,6 +87,9 @@ export default {
                 this.error = `Une erreur ${connection.status} est survenue : ${connection.statusText}`;
             }
         }
+    },
+    components: {
+        Loading
     }
 } 
 </script>
