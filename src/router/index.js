@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from '@/App.vue'
-import SignIn from '@/views/SignIn.vue'
-import LogIn from '@/views/Login.vue'
+import SignIn from '@/components/SignIn.vue'
+import LogIn from '@/components/LogIn.vue'
+import store from '@/store/index';
 
 Vue.use(VueRouter)
 
@@ -25,7 +26,21 @@ Vue.use(VueRouter)
 ]
 
 const router = new VueRouter({
-  routes
-})
+	mode: 'history',
+	base: process.env.BASE_URL,
+	routes
+});
+
+router.beforeEach((to, from, next) => {
+	const userInStore = store.state.users.user;
+	const isAuthenticated = userInStore !== null ? true : false;
+	const isProtected = to.matched.some((route) => route.meta.needAuth);
+
+	if (!isAuthenticated && isProtected) {
+		next({ name: 'LogIn' });
+	} else {
+		next();
+	}
+});
 
 export default router

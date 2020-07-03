@@ -109,7 +109,7 @@
                 justify="center"
               >
                 <v-row justify="center">
-                  <v-dialog v-model="dialog_create" fullscreen hide-overlay transition="dialog-bottom-transition">
+                  <v-dialog v-model="dialog" fullscreen hide-overlay transition="dialog-bottom-transition">
                     <template v-slot:activator="{ on, attrs }">
                       <v-btn class="ma-2" outlined color="white" v-bind="attrs" v-on="on">
                         Créer un compte
@@ -117,35 +117,17 @@
                     </template>
                     <v-card>
                       <v-toolbar dark color="#ff7777">
-                        <v-btn icon dark @click="dialog_create = false">
+                        <v-btn icon dark @click="dialog = false">
                           <v-icon>mdi-close</v-icon>
                         </v-btn>
                         <v-toolbar-title>Créer un compte</v-toolbar-title>
                       </v-toolbar>
-                        <v-card-text>
-                          <v-container>
-                            <v-row>
-                              <v-col cols="12">
-                                <v-text-field label="Email*" required></v-text-field>
-                              </v-col>
-                              <v-col cols="12">
-                                <v-text-field label="Mot de passe*" type="password" required></v-text-field>
-                              </v-col>
-                              <v-col cols="12">
-                                <v-text-field label="Répétez le mot de passe*" type="password" required></v-text-field>
-                              </v-col>
-                            </v-row>
-                          </v-container>
-                          <small>*Obligatoire</small>
-                        </v-card-text>
-                        <v-card-actions>
-                          <v-btn depressed class="ml-15" color="#ff7777" text @click="dialog_create = false">Je créer mon compte</v-btn>
-                        </v-card-actions>
+                        <SignIn/>
                       </v-card>
                   </v-dialog>
                 </v-row>
                 <v-row justify="center">
-                  <v-dialog v-model="dialog_connect" fullscreen hide-overlay transition="dialog-bottom-transition">
+                  <v-dialog v-model="dialog" fullscreen hide-overlay transition="dialog-bottom-transition">
                     <template v-slot:activator="{ on, attrs }">
                       <v-btn class="ma-2" outlined color="white" v-bind="attrs" v-on="on">
                         Se connecter
@@ -153,27 +135,12 @@
                     </template>
                     <v-card>
                       <v-toolbar dark color="#ff7777">
-                        <v-btn icon dark @click="dialog_connect = false">
+                        <v-btn icon dark @click="dialog = false">
                           <v-icon>mdi-close</v-icon>
                         </v-btn>
                         <v-toolbar-title>Se connecter</v-toolbar-title>
                       </v-toolbar>
-                        <v-card-text>
-                          <v-container>
-                            <v-row>
-                              <v-col cols="12">
-                                <v-text-field label="Email*" required></v-text-field>
-                              </v-col>
-                              <v-col cols="12">
-                                <v-text-field label="Mot de passe*" type="password" required></v-text-field>
-                              </v-col>
-                            </v-row>
-                          </v-container>
-                          <small>*Obligatoire</small>
-                        </v-card-text>
-                        <v-card-actions>
-                          <v-btn depressed class="ml-15" color="#ff7777" text @click="dialog_connect = false">Connexion</v-btn>
-                        </v-card-actions>
+                        <LogIn/>
                       </v-card>
                   </v-dialog>
                 </v-row>
@@ -196,10 +163,15 @@
 
 
 <script>
+import LogIn from "@/components/LogIn.vue";
+import SignIn from "@/components/SignIn.vue";
+
 export default {
   name: 'App',
 
   components: {
+    LogIn,
+    SignIn
   },
 
   data() {
@@ -213,16 +185,6 @@ export default {
   },
 
   methods: {
-    signInClick() {
-      this.home = false;
-
-      this.$router.push({name: "SignIn"});
-    },
-    logInClick() {
-      this.home = false;
-
-      this.$router.push({name: "LogIn"});
-    }
   }
 };
 </script>
