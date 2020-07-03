@@ -117,7 +117,6 @@
 
 
 <script>
-
 export default {
   name: 'App',
 
@@ -127,5 +126,14 @@ export default {
   data: () => ({
     //
   }),
+
+  methods: {
+    signInClick() {
+
+    },
+    loginClick() {
+      
+    }
+  }
 };
 </script>

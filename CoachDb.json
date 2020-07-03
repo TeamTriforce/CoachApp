@@ -1,103 +1,126 @@
 {
-    "user": [
-        {
-            "id": 1,
-            "login": "clemzer3000",
-            "password": 123,
-            "coach": false
-        },
-        {
-            "id": 2,
-            "login": "fsjjgj",
-            "password": 123,
-            "coach": true
-        }
-    ],
-
-    "dailyReport": [
-        {
-            "id": 1,
-            "userId": 1,
-            "sport": "Escalade",
-            "intensityId": 4,
-            "duration": 1.5,
-            "breakfast": "aucun",
-            "lunch": "aucun",
-            "dinner": "bar protéinée",
-            "snack": false,
-            "weight": 60,
-            "moodId": 1,
-            "info": "RAS"
-        }
-    ],
-
-    "intensity": [
-        {
-            "id": 1,
-            "name": "Faible"
-        },
-        {
-            "id": 2,
-            "name": "Normale"
-        },
-        {
-            "id": 3,
-            "name": "Forte"
-        },
-        {
-            "id": 4,
-            "name": "Extrème"
-        }
-    ],
-
-    "mood": [
-        {
-            "id": 1,
-            "name": "Maussade"
-        },
-        {
-            "id": 2,
-            "name": "Normal"
-        },
-        {
-            "id": 3,
-            "name": "Bien"
-        },
-        {
-            "id": 4,
-            "name": "Très bien"
-        }
-    ],
-
-    "coachMessage": [
-        {
-            "id": 1,
-            "userCoachId": 2,
-            "userClientId": 1,
-            "message": "Félicitation clemzer3000 !"
-        }
-    ],
-
-    "boostingMessage": [
-        {
-            "id": 1,
-            "moodId": 1,
-            "message": "Du nerf !"
-        },
-        {
-            "id": 2,
-            "moodId": 2,
-            "message": "Commence pas à molir."
-        },
-        {
-            "id": 3,
-            "moodId": 3,
-            "message": "Continue comme ça !"
-        },
-        {
-            "id": 4,
-            "mood": 4,
-            "message": "Prends pas le melon !"
-        }
-    ]
+  "user": [
+    {
+      "id": 1,
+      "login": "clemzer3000",
+      "password": 123,
+      "coach": false
+    },
+    {
+      "id": 2,
+      "login": "fsjjgj",
+      "password": 123,
+      "coach": true
+    },
+    {
+      "params": {
+        "login": "jo",
+        "password": "1"
+      },
+      "id": 3
+    },
+    {
+      "params": {
+        "login": "a",
+        "password": "1"
+      },
+      "id": 4
+    },
+    {
+      "params": {
+        "login": "a",
+        "password": "`"
+      },
+      "id": 5
+    },
+    {
+      "params": {
+        "login": "a",
+        "password": "a"
+      },
+      "id": 6
+    }
+  ],
+  "dailyReport": [
+    {
+      "id": 1,
+      "userId": 1,
+      "sport": "Escalade",
+      "intensityId": 4,
+      "duration": 1.5,
+      "breakfast": "aucun",
+      "lunch": "aucun",
+      "dinner": "bar protéinée",
+      "snack": false,
+      "weight": 60,
+      "moodId": 1,
+      "info": "RAS"
+    }
+  ],
+  "intensity": [
+    {
+      "id": 1,
+      "name": "Faible"
+    },
+    {
+      "id": 2,
+      "name": "Normale"
+    },
+    {
+      "id": 3,
+      "name": "Forte"
+    },
+    {
+      "id": 4,
+      "name": "Extrème"
+    }
+  ],
+  "mood": [
+    {
+      "id": 1,
+      "name": "Maussade"
+    },
+    {
+      "id": 2,
+      "name": "Normal"
+    },
+    {
+      "id": 3,
+      "name": "Bien"
+    },
+    {
+      "id": 4,
+      "name": "Très bien"
+    }
+  ],
+  "coachMessage": [
+    {
+      "id": 1,
+      "userCoachId": 2,
+      "userClientId": 1,
+      "message": "Félicitation clemzer3000 !"
+    }
+  ],
+  "boostingMessage": [
+    {
+      "id": 1,
+      "moodId": 1,
+      "message": "Du nerf !"
+    },
+    {
+      "id": 2,
+      "moodId": 2,
+      "message": "Commence pas à molir."
+    },
+    {
+      "id": 3,
+      "moodId": 3,
+      "message": "Continue comme ça !"
+    },
+    {
+      "id": 4,
+      "mood": 4,
+      "message": "Prends pas le melon !"
+    }
+  ]
 }
