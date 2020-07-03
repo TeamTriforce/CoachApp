@@ -1,0 +1,84 @@
+{
+    "client": [
+        {
+            "id": 1,
+            "login": "clemzer3000",
+            "password": 123
+        }
+    ],
+
+    "coach": [
+        {
+            "id": 1,
+            "login": "fsjjgj",
+            "password": 123
+        }
+    ],
+
+    "dailyReport": [
+        {
+            "id": 1,
+            "sport": "escalade",
+            "intensity": "extrème",
+            "duration": 1.5,
+            "breakfast": "aucun",
+            "lunch": "aucun",
+            "dinner": "bar protéinée",
+            "snack": false,
+            "weight": 60,
+            "moodId": 1,
+            "info": "RAS"
+        }
+    ],
+
+    "mood": [
+        {
+            "id": 1,
+            "name": "maussade"
+        },
+        {
+            "id": 2,
+            "name": "normal"
+        },
+        {
+            "id": 3,
+            "name": "bien"
+        },
+        {
+            "id": 4,
+            "name": "très bien"
+        }
+    ],
+
+    "coachMessage": [
+        {
+            "id": 1,
+            "coachId": 1,
+            "clientId": 1,
+            "message": "Félicitation clemzer3000 !"
+        }
+    ],
+
+    "boostingMessage": [
+        {
+            "id": 1,
+            "moodId": 1,
+            "message": "Du nerf !"
+        },
+        {
+            "id": 2,
+            "moodId": 2,
+            "message": "Commence pas à molir."
+        },
+        {
+            "id": 3,
+            "moodId": 3,
+            "message": "Continue comme ça !"
+        },
+        {
+            "id": 4,
+            "mood": 4,
+            "message": "Prends pas le melon !"
+        }
+    ]
+}
