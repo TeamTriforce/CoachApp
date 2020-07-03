@@ -1,8 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from '@/App.vue'
-import Home from '@/views/Member.vue'
 import store from '@/store/index';
+import Member from '@/views/Member.vue'
+import MentionsLegales from '@/views/MentionsLegales.vue'
+import CoachSpace from '@/views/CoachSpace.vue'
+
 
 Vue.use(VueRouter)
 
@@ -15,8 +18,18 @@ Vue.use(VueRouter)
   {
     path: '/Member',
     name: 'Member',
-    component: Home
-  }
+    component: Member
+  },
+  {
+    path: '/Coach',
+    name: 'Coach',
+    component: CoachSpace
+  },
+  {
+    path: '/MentionsLegales',
+    name: 'MentionsLegales',
+    component: MentionsLegales
+  },
 ]
 
 const router = new VueRouter({

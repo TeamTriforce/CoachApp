@@ -1,11 +1,13 @@
 <template>
-    <v-form>
-        <v-text-field v-model="login" label="Identifiant" required/>
-        <v-text-field v-model="password" label="Mot de passe" required type="password"/>
-        <v-text-field v-model="repeat" label="Retaper le mot de passe" required type="password"/>
-        <v-btn color="success" @click="signIn">Inscription</v-btn>
-        <v-alert v-if="error" type="error">{{ error }}</v-alert>
-    </v-form>
+    <div style="padding: 50px 100px;">
+        <v-form>
+            <v-text-field v-model="login" label="Identifiant" required/>
+            <v-text-field v-model="password" label="Mot de passe" required type="password"/>
+            <v-text-field v-model="repeat" label="Retaper le mot de passe" required type="password"/>
+            <v-btn class="white--text mt-4" color="#ff7777" @click="signIn">Inscription</v-btn>
+            <v-alert v-if="error" type="error">{{ error }}</v-alert>
+        </v-form>
+    </div>
 </template>
 
 <script>
@@ -23,7 +25,7 @@ export default {
             if (this.password != this.repeat) {
                 this.error = "Les mots de passe sont différents";
             } else {
-                const connection = await this.axios.post(   
+                const connection = await this.axios.post(
                 "http://localhost:3000/user",
                 {
                     login: this.login,
@@ -33,7 +35,7 @@ export default {
                 );
 
                 if (connection.status == 201) {
-                    // TODO : Start Client view.
+                    this.$router.push({ name: "Member" });
 
                     this.$store.dispatch("updateUser", { name: this.login });
                 } else {
@@ -42,8 +44,8 @@ export default {
             }
         }
     }
-} 
+}
 </script>
 
-<style lang="scss" scoped> 
+<style lang="scss" scoped>
 </style>

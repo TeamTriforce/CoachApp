@@ -21,11 +21,7 @@
         >
           <span class="mr-2">Accueil</span>
         </v-btn>
-        <v-btn
-          href=""
-          target="_blank"
-          text
-        >
+        <v-btn target="_blank" @click="MemberClick">
           <span class="mr-2">Membres</span>
         </v-btn>
 
@@ -34,11 +30,7 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn
-        href=""
-        target="_blank"
-        text
-      >
+      <v-btn target="_blank" @click="CoachClick">
         <span class="mr-2">Espace Coach</span>
       </v-btn>
     </v-app-bar>
@@ -153,7 +145,7 @@
             class="text-center"
             cols="12"
           >
-          <v-row justify="center"><v-btn text small color="error">Mentions légales</v-btn> - <v-btn text small color="error">Contact</v-btn></v-row>
+          <v-row justify="center"><v-btn text small color="error" @click="mentionsLegalesClick()">Mentions légales</v-btn> - <v-btn text small color="error">Contact</v-btn></v-row>
             {{ new Date().getFullYear() }} — <strong>CoachApp</strong>
           </v-col>
         </v-footer>
@@ -186,6 +178,31 @@ export default {
   },
 
   methods: {
+    signInClick() {
+      this.home = false;
+
+      this.$router.push({name: "SignIn"});
+    },
+    logInClick() {
+      this.home = false;
+
+      this.$router.push({name: "LogIn"});
+    },
+    mentionsLegalesClick(){
+      this.home = false;
+
+      this.$router.push({name: "MentionsLegales"});
+    },
+    MemberClick() {
+      this.home = false;
+
+      this.$router.push({name: "Member"});
+    },
+    CoachClick() {
+      this.home = false;
+
+      this.$router.push({name: "Coach"});
+    },
   }
 };
 </script>

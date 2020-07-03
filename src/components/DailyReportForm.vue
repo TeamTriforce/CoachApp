@@ -41,7 +41,7 @@ export default {
             weight: 0,
             moodId: 0,
             info: "",
-            loading:false,
+            loading: false,
             error: ""
         };
     },
