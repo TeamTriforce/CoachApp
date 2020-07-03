@@ -11,20 +11,26 @@
       "login": "fsjjgj",
       "password": 123,
       "coach": true
+    },
+    {
+      "login": "a",
+      "password": "a",
+      "coach": false,
+      "id": 3
     }
   ],
   "mealQuantity": [
     {
-        "id": 1,
-        "name": "Légé"
+      "id": 1,
+      "name": "Légé"
     },
     {
-        "id": 2,
-        "name": "Normalement"
+      "id": 2,
+      "name": "Normalement"
     },
     {
-        "id": 3,
-        "name": "Beaucoup"
+      "id": 3,
+      "name": "Beaucoup"
     }
   ],
   "dailyReport": [

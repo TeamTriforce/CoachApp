@@ -1,14 +1,10 @@
 <template>
-<v-container fluid style="background-color: #ff7777;">
-    <h1 font-weight-thin mb-4 white--text>Connection</h1>
-
     <v-form>
         <v-text-field v-model="login" label="Identifiant" required/>
         <v-text-field v-model="password" label="Mot de passe" required type="password"/>
         <v-btn color="success" @click="connect">Connection</v-btn>
         <v-alert v-if="error" type="error">{{ error }}</v-alert>
     </v-form>
-</v-container>
 </template>
 
 <script>

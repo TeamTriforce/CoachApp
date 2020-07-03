@@ -31,7 +31,7 @@
 
 
       </div>
-      
+
       <v-spacer></v-spacer>
 
       <v-btn
@@ -48,7 +48,7 @@
         <router-view></router-view>
       </v-container>
     </v-content>
-    
+
     <v-content v-if="home">
       <v-parallax
         dark
@@ -108,8 +108,42 @@
                 align="center"
                 justify="center"
               >
-                <v-btn class="ma-2" outlined color="white" @click="signInClick">Créer un compte</v-btn>
-                <v-btn class="ma-2" outlined color="white" @click="logInClick">Je me connecte</v-btn>
+                <v-row justify="center">
+                  <v-dialog v-model="dialog" fullscreen hide-overlay transition="dialog-bottom-transition">
+                    <template v-slot:activator="{ on, attrs }">
+                      <v-btn class="ma-2" outlined color="white" v-bind="attrs" v-on="on">
+                        Créer un compte
+                      </v-btn>
+                    </template>
+                    <v-card>
+                      <v-toolbar dark color="#ff7777">
+                        <v-btn icon dark @click="dialog = false">
+                          <v-icon>mdi-close</v-icon>
+                        </v-btn>
+                        <v-toolbar-title>Créer un compte</v-toolbar-title>
+                      </v-toolbar>
+                        <SignIn/>
+                      </v-card>
+                  </v-dialog>
+                </v-row>
+                <v-row justify="center">
+                  <v-dialog v-model="dialog" fullscreen hide-overlay transition="dialog-bottom-transition">
+                    <template v-slot:activator="{ on, attrs }">
+                      <v-btn class="ma-2" outlined color="white" v-bind="attrs" v-on="on">
+                        Se connecter
+                      </v-btn>
+                    </template>
+                    <v-card>
+                      <v-toolbar dark color="#ff7777">
+                        <v-btn icon dark @click="dialog = false">
+                          <v-icon>mdi-close</v-icon>
+                        </v-btn>
+                        <v-toolbar-title>Se connecter</v-toolbar-title>
+                      </v-toolbar>
+                        <LogIn/>
+                      </v-card>
+                  </v-dialog>
+                </v-row>
               </v-row>
             </v-col>
             </v-row>
@@ -129,29 +163,28 @@
 
 
 <script>
+import LogIn from "@/components/LogIn.vue";
+import SignIn from "@/components/SignIn.vue";
+
 export default {
   name: 'App',
 
   components: {
+    LogIn,
+    SignIn
   },
 
   data() {
     return {
-      home: true
+      home: true,
+      dialog: false,
+      notifications: false,
+      sound: true,
+      widgets: false,
     }
   },
 
   methods: {
-    signInClick() {
-      this.home = false;
-
-      this.$router.push({name: "SignIn"});
-    },
-    logInClick() {
-      this.home = false;
-
-      this.$router.push({name: "LogIn"});
-    }
   }
 };
 </script>
