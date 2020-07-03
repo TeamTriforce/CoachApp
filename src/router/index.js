@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from '@/App.vue'
+import SignIn from '@/views/SignIn.vue'
+import LogIn from '@/views/Login.vue'
+import Member from '@/views/Member.vue'
+import CoachSpace from '@/views/CoachSpace.vue'
 import SignIn from '@/components/SignIn.vue'
 import LogIn from '@/components/LogIn.vue'
 import store from '@/store/index';
@@ -24,9 +28,14 @@ Vue.use(VueRouter)
     component: SignIn
   },
   {
-    path: 'MentionsLegales',
-    name: 'MentionsLegales',
-    component: MentionsLegales
+    path: 'Member',
+    name: 'Member',
+    component: Member
+  },
+  {
+    path: 'Coach',
+    name: 'Coach',
+    component: CoachSpace
   },
 ]
 
