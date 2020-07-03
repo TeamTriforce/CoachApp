@@ -108,8 +108,6 @@
                 align="center"
                 justify="center"
               >
-                <v-btn class="ma-2" outlined color="white" v-bind="attrs" v-on="on">Créer un compte</v-btn>
-                <v-btn class="ma-2" outlined color="white" @click="logInClick">Je me connecte</v-btn>
                 <v-row justify="center">
                   <v-dialog v-model="dialog_create" fullscreen hide-overlay transition="dialog-bottom-transition">
                     <template v-slot:activator="{ on, attrs }">
