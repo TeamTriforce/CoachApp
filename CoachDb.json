@@ -18,8 +18,8 @@
     "dailyReport": [
         {
             "id": 1,
-            "sport": "escalade",
-            "intensity": "extrème",
+            "sport": "Escalade",
+            "intensityId": 4,
             "duration": 1.5,
             "breakfast": "aucun",
             "lunch": "aucun",
@@ -31,22 +31,41 @@
         }
     ],
 
-    "mood": [
+    "intensity": [
         {
             "id": 1,
-            "name": "maussade"
+            "name": "Faible"
         },
         {
             "id": 2,
-            "name": "normal"
+            "name": "Normale"
         },
         {
             "id": 3,
-            "name": "bien"
+            "name": "Forte"
         },
         {
             "id": 4,
-            "name": "très bien"
+            "name": "Extrème"
+        }
+    ],
+
+    "mood": [
+        {
+            "id": 1,
+            "name": "Maussade"
+        },
+        {
+            "id": 2,
+            "name": "Normal"
+        },
+        {
+            "id": 3,
+            "name": "Bien"
+        },
+        {
+            "id": 4,
+            "name": "Très bien"
         }
     ],
 
