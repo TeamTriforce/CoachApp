@@ -31,7 +31,7 @@
 
 
       </div>
-      
+
       <v-spacer></v-spacer>
 
       <v-btn
@@ -48,7 +48,7 @@
         <router-view></router-view>
       </v-container>
     </v-content>
-    
+
     <v-content v-if="home">
       <v-parallax
         dark
@@ -108,8 +108,77 @@
                 align="center"
                 justify="center"
               >
-                <v-btn class="ma-2" outlined color="white" @click="signInClick">Créer un compte</v-btn>
+                <v-btn class="ma-2" outlined color="white" v-bind="attrs" v-on="on">Créer un compte</v-btn>
                 <v-btn class="ma-2" outlined color="white" @click="logInClick">Je me connecte</v-btn>
+                <v-row justify="center">
+                  <v-dialog v-model="dialog_create" fullscreen hide-overlay transition="dialog-bottom-transition">
+                    <template v-slot:activator="{ on, attrs }">
+                      <v-btn class="ma-2" outlined color="white" v-bind="attrs" v-on="on">
+                        Créer un compte
+                      </v-btn>
+                    </template>
+                    <v-card>
+                      <v-toolbar dark color="#ff7777">
+                        <v-btn icon dark @click="dialog_create = false">
+                          <v-icon>mdi-close</v-icon>
+                        </v-btn>
+                        <v-toolbar-title>Créer un compte</v-toolbar-title>
+                      </v-toolbar>
+                        <v-card-text>
+                          <v-container>
+                            <v-row>
+                              <v-col cols="12">
+                                <v-text-field label="Email*" required></v-text-field>
+                              </v-col>
+                              <v-col cols="12">
+                                <v-text-field label="Mot de passe*" type="password" required></v-text-field>
+                              </v-col>
+                              <v-col cols="12">
+                                <v-text-field label="Répétez le mot de passe*" type="password" required></v-text-field>
+                              </v-col>
+                            </v-row>
+                          </v-container>
+                          <small>*Obligatoire</small>
+                        </v-card-text>
+                        <v-card-actions>
+                          <v-btn depressed class="ml-15" color="#ff7777" text @click="dialog_create = false">Je créer mon compte</v-btn>
+                        </v-card-actions>
+                      </v-card>
+                  </v-dialog>
+                </v-row>
+                <v-row justify="center">
+                  <v-dialog v-model="dialog_connect" fullscreen hide-overlay transition="dialog-bottom-transition">
+                    <template v-slot:activator="{ on, attrs }">
+                      <v-btn class="ma-2" outlined color="white" v-bind="attrs" v-on="on">
+                        Se connecter
+                      </v-btn>
+                    </template>
+                    <v-card>
+                      <v-toolbar dark color="#ff7777">
+                        <v-btn icon dark @click="dialog_connect = false">
+                          <v-icon>mdi-close</v-icon>
+                        </v-btn>
+                        <v-toolbar-title>Se connecter</v-toolbar-title>
+                      </v-toolbar>
+                        <v-card-text>
+                          <v-container>
+                            <v-row>
+                              <v-col cols="12">
+                                <v-text-field label="Email*" required></v-text-field>
+                              </v-col>
+                              <v-col cols="12">
+                                <v-text-field label="Mot de passe*" type="password" required></v-text-field>
+                              </v-col>
+                            </v-row>
+                          </v-container>
+                          <small>*Obligatoire</small>
+                        </v-card-text>
+                        <v-card-actions>
+                          <v-btn depressed class="ml-15" color="#ff7777" text @click="dialog_connect = false">Connexion</v-btn>
+                        </v-card-actions>
+                      </v-card>
+                  </v-dialog>
+                </v-row>
               </v-row>
             </v-col>
             </v-row>
@@ -137,7 +206,11 @@ export default {
 
   data() {
     return {
-      home: true
+      home: true,
+      dialog: false,
+      notifications: false,
+      sound: true,
+      widgets: false,
     }
   },
 
