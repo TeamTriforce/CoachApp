@@ -21,11 +21,7 @@
         >
           <span class="mr-2">Accueil</span>
         </v-btn>
-        <v-btn
-          href=""
-          target="_blank"
-          text
-        >
+        <v-btn target="_blank" @click="MemberClick">
           <span class="mr-2">Membres</span>
         </v-btn>
 
@@ -34,11 +30,7 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn
-        href=""
-        target="_blank"
-        text
-      >
+      <v-btn target="_blank" @click="CoachClick">
         <span class="mr-2">Espace Coach</span>
       </v-btn>
     </v-app-bar>
@@ -200,7 +192,17 @@ export default {
       this.home = false;
 
       this.$router.push({name: "MentionsLegales"});
-    }
+    },
+    MemberClick() {
+      this.home = false;
+
+      this.$router.push({name: "Member"});
+    },
+    CoachClick() {
+      this.home = false;
+
+      this.$router.push({name: "Coach"});
+    },
   }
 };
 </script>
