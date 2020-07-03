@@ -39,18 +39,21 @@
 
     <v-content>
       <HelloWorld/>
+      <LoginForm/>
     </v-content>
   </v-app>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld';
+import LoginForm from './components/LoginForm';
 
 export default {
   name: 'App',
 
   components: {
     HelloWorld,
+    LoginForm
   },
 
   data: () => ({
