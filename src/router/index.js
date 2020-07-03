@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import App from '@/App.vue'
 import SignIn from '@/views/SignIn.vue'
 import LogIn from '@/views/Login.vue'
+import Member from '@/views/Member.vue'
+import CoachSpace from '@/views/CoachSpace.vue'
 
 Vue.use(VueRouter)
 
@@ -21,7 +23,17 @@ Vue.use(VueRouter)
     path: 'SignIn',
     name: 'SignIn',
     component: SignIn
-  }
+  },
+  {
+    path: 'Member',
+    name: 'Member',
+    component: Member
+  },
+  {
+    path: 'Coach',
+    name: 'Coach',
+    component: CoachSpace
+  },
 ]
 
 const router = new VueRouter({
