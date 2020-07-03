@@ -153,7 +153,7 @@
             class="text-center"
             cols="12"
           >
-          <v-row justify="center"><v-btn text small color="error">Mentions légales</v-btn> - <v-btn text small color="error">Contact</v-btn></v-row>
+          <v-row justify="center"><v-btn text small color="error" @click="mentionsLegalesClick()">Mentions légales</v-btn> - <v-btn text small color="error">Contact</v-btn></v-row>
             {{ new Date().getFullYear() }} — <strong>CoachApp</strong>
           </v-col>
         </v-footer>
@@ -186,6 +186,21 @@ export default {
   },
 
   methods: {
+    signInClick() {
+      this.home = false;
+
+      this.$router.push({name: "SignIn"});
+    },
+    logInClick() {
+      this.home = false;
+
+      this.$router.push({name: "LogIn"});
+    },
+    mentionsLegalesClick(){
+      this.home = false;
+
+      this.$router.push({name: "MentionsLegales"});
+    }
   }
 };
 </script>
