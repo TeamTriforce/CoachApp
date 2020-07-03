@@ -1,47 +1,5 @@
 <template>
-  <v-app>
-    <v-app-bar
-      app
-      color="#ff7777"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="@/assets/logo.png"
-          transition="scale-transition"
-          width="40"
-        />
-        <v-btn
-          href=""
-          target="_blank"
-          text
-        >
-          <span class="mr-2">Accueil</span>
-        </v-btn>
-        <v-btn target="_blank" @click="MemberClick">
-          <span class="mr-2">Membres</span>
-        </v-btn>
-
-
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn target="_blank" @click="CoachClick">
-        <span class="mr-2">Espace Coach</span>
-      </v-btn>
-    </v-app-bar>
-
-    <v-content>
-      <v-container>
-        <router-view></router-view>
-      </v-container>
-    </v-content>
-
-    <v-content v-if="home">
+  <v-content>
       <v-parallax
         dark
         src="@/assets/background.png"
@@ -150,49 +108,17 @@
           </v-col>
         </v-footer>
     </v-content>
-  </v-app>
 </template>
-
 
 <script>
 import LogIn from "@/components/LogIn.vue";
 import SignIn from "@/components/SignIn.vue";
 
 export default {
-  name: 'App',
-
+  name: 'Home',
   components: {
     LogIn,
     SignIn
-  },
-
-  data() {
-    return {
-      home: true,
-      dialog_create: false,
-      dialog_connect: false,
-      notifications: false,
-      sound: true,
-      widgets: false,
-    }
-  },
-
-  methods: {
-    mentionsLegalesClick(){
-      this.home = false;
-
-      this.$router.push({name: "MentionsLegales"});
-    },
-    MemberClick() {
-      this.home = false;
-
-      this.$router.push({name: "Member"});
-    },
-    CoachClick() {
-      this.home = false;
-
-      this.$router.push({name: "Coach"});
-    },
   }
-};
+}
 </script>
